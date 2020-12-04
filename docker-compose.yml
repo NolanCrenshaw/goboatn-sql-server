@@ -1,16 +1,13 @@
-version: '3.1'
+version: "3.1"
 
 services:
-
   db:
     image: postgres
     container_name: goboatn_db
     ports:
       - 5401:5432
-    restart: always
     env_file: .env
     volumes:
       - ./postgres.conf:/etc/postgresql/postgresql.conf
     command: postgres -c config_file=/etc/postgresql/postgresql.conf
     restart: always
-
